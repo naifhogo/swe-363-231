@@ -1,0 +1,33 @@
+li{
+    display: inline;
+    margin-left: 10;
+}
+details ul{
+    padding-left: 0px;
+    color: greenyellow;
+}
+a {
+    color: #F26F63;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header{
+    padding: 40px 30px;
+    background-color: #1f821f;
+    color: whitesmoke;
+}
+ul:first-child a{
+    color:powderblue;
+}
+::selection{
+    background-color: #F26F63;
+    color: blueviolet;
+}
+header details ui:hover{
+
+border-bottom: solid cadetblue;
+}
+inupt[type="text"]{
+    
+}
