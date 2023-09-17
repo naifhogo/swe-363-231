@@ -1,24 +1,59 @@
+body {
+    background-color: #000;
+}
+  
+body, h1, p {
+    color: #fff;
+}
+  
+header {
+    background-color: #333;
+}
+  
+footer {
+    background-color: #333;
+}
+th {
+    text-transform:uppercase;
+  }
+
+title {
+    text-transform:uppercase;
+  }
+  h1{
+    text-transform:uppercase;
+  }
+  h2,h3 {
+    text-transform:capitalize;
+  }
+
+  
 li{
+    top: 4px;
     display: inline;
     margin-left: 10;
 }
 details ul{
+    top: 4px;
     padding-left: 0px;
     color: greenyellow;
 }
 a {
-    color: #F26F63;
+    color: hwb(145 22% 14%);;
 }
+.top {
+    background-color:#ff4b01;
+  }
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 header{
     padding: 40px 30px;
-    background-color: #1f821f;
+    background-color: hsla(0, 61%, 32%, 0.918);
     color: whitesmoke;
 }
 ul:first-child a{
-    color:powderblue;
+    color:hwb(145 22% 14%);
 }
 ::selection{
     background-color: #F26F63;
