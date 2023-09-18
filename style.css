@@ -1,3 +1,11 @@
+
+em {
+    background-color: blue;
+}
+#the_most_important {
+    text-transform:uppercase;
+    background-color: gold;
+  }
 body {
     background-color: #000;
 }
@@ -5,9 +13,16 @@ body {
 body, h1, p {
     color: #fff;
 }
+h2{
+    font-family: sans-serif;
+}
+h2 + p::first-letter {
+    font-size: x-large;
+  }
   
 header {
     background-color: #333;
+    text-transform:uppercase;
 }
   
 footer {
@@ -15,6 +30,12 @@ footer {
 }
 th {
     text-transform:uppercase;
+  }
+  tr:hover {
+    background-color: lightblue;
+  }
+  tr:hover td {
+    background-color: lightblue;
   }
 
 title {
@@ -28,11 +49,20 @@ title {
   }
 
   
-li{
+ul li{
     top: 4px;
     display: inline;
-    margin-left: 10;
+    margin-right: 5px;
 }
+nav {
+    display: flex;
+    justify-content: flex-start;
+    text-decoration: underline;
+  }
+  nav ul li:not(:first-child) a {
+    text-decoration: none;
+  }
+
 details ul{
     top: 4px;
     padding-left: 0px;
@@ -63,6 +93,6 @@ header details ui:hover{
 
 border-bottom: solid cadetblue;
 }
-inupt[type="text"]{
-    
+table tbody tr:nth-child(odd) {
+    background-color: #b91313;
 }
