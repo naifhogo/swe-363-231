@@ -57,16 +57,16 @@ ul li{
 nav {
     display: flex;
     justify-content: flex-start;
-    text-decoration: underline;
+    
   }
   nav ul li:not(:first-child) a {
     text-decoration: none;
   }
 
-details ul{
+details{
     top: 4px;
-    padding-left: 0px;
     color: greenyellow;
+    background-color: #333;
 }
 a {
     color: hwb(145 22% 14%);;
@@ -78,13 +78,16 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 header{
-    padding: 40px 30px;
+    padding: 30px 30px;
     background-color: hsla(0, 61%, 32%, 0.918);
     color: whitesmoke;
+    margin-bottom: 30px;
 }
+
 ul:first-child a{
     color:hwb(145 22% 14%);
 }
+
 ::selection{
     background-color: #F26F63;
     color: blueviolet;
@@ -93,6 +96,16 @@ header details ui:hover{
 
 border-bottom: solid cadetblue;
 }
+
 table tbody tr:nth-child(odd) {
     background-color: #b91313;
+}
+input{
+  height: 20px;
+}
+input[type="text"] {
+  border-color: lightgray;
+}
+input[type="name"] {
+  height: 50px;
 }
