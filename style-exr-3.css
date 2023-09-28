@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lora:ital,wght@0,400;0,500;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lexend+Deca:wght@100&family=Lora:ital,wght@0,400;0,500;1,500;1,700&display=swap');
+time{
+    color: #FFF;
+    font-family: Lexend Deca;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+h1{
+    color: #FFF;
+    text-align: center;
+    font-family: DM Serif Display ;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+h2 {
+    color: #6EEB83;
+    font-family: DM Serif Display;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+body{
+    width: 1024px;
+    height: 1366px;
+    background: #272727;
+}
+nav ,a {
+    color: rgb(255, 255, 255);
+    flex-shrink: 0;
+    border: 1px solid #6EEB83;
+    background: #272727;
+    border-radius: 100px;
+    fill: #6EEB83;
+}
+
+nav ul li{
+    color: rgb(255, 255, 255);
+    top: 4px;
+    display: inline;
+    margin-right: 5px;
+    
+}
+p , main , aside{
+    width: 876px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Lexend Deca;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+figure{
+    width: 413px;
+    height: 300px;
+    flex-shrink: 0;
+}
+details{
+    top: 4px;
+    color: greenyellow;
+    background-color: #333;
+    
+}
+label{
+    color: #6EEB83;
+    font-family: Lexend Deca;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+footer{
+    color: #FFF;
+   
+}
+input[type="submit"]{
+    width: 180px;
+    height: 60px;
+    flex-shrink: 0;
+    background: #6EEB83;
+    color: #000;
+    font-family: Lexend Deca;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal; 
+}
+input {
+    width: 600px;
+    height: 60px;
+    flex-shrink: 0;
+    border: 1px solid #6EEB83;
+    background: #272727;
+    color: #FFF;
+    font-size: 18px;
+}
+textarea{
+    width: 600px;
+    height: 60px;
+    flex-shrink: 0;
+    border: 1px solid #6EEB83;
+    background: #272727;
+    color: #FFF;
+    font-size: 18px;
+    
+}
+input[type="checkbox"]{
+    width: 60px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid #6EEB83;
+    background: #272727;
+    
+}
+.button {
+    transition: background-color 0.3s ease;
+  }
+  .submit{
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #ff0000;
+  }
+  .submit:hover {
+    background-color: #ff0000;
+  }
+  

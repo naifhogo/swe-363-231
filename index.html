@@ -12,17 +12,29 @@
     <title>Gamer review</title>
     <link rel="stylesheet" href="style.css">
   </head>
-
   <body>
     <header>
-      <nav class="nav">
-        <ul class="d">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="reviews.html">About</a></li>
-          <li><a href="form.html">Services</a></li>
-          <li><a href="details.html">Contact</a></li>
+      <nav class="navbar">
+        <ul class="navbar-menu">
+          <li class="navbar-icon"></li>
+          <li class="navbar-item"><a href="index.html">Home</a></li>
+          <li class="navbar-item"><a href="reviews.html">About</a></li>
+          <li class="navbar-item"><a href="form.html">Services</a></li>
+          <li class="navbar-item"><a href="details.html">Contact</a></li>
         </ul>
       </nav>
+      <div id="loader-container">
+        <div class="loader">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
+      
+      <!-- Your website content -->
+      <div id="content" style="display: none;">
+        <!-- Your website content goes here -->
+      </div>
       <h1>Gamer review blog</h1>
       <time>09.04.2023</time>
     </header>
@@ -45,7 +57,7 @@
     />
   </figure>
   <figure>
-    
+     
     <table class="top" border="1">
       <figcaption>
         <em id="the_most_important">Game Ratings</em>
@@ -75,9 +87,9 @@
       </tr>
     </tbody>
     </table>
+    <button class="button">Click for luck!</button>
   </figure>
   </main>
-
     <details>
       <footer>
     <ul>
@@ -90,13 +102,21 @@
   <li><a href="details.html">Details</a></li>
   <p>You can submit your Proposal in here</p>
 
-  <li><a href="form.html">Proposal</a></li></ul>
+  <li><a href="form.html">Proposal</a></li>
+  <a href="index-ar.html">Switch to Arabic</a></ul>
 </footer>
 </details>
 <footer> <small>
   Copyright © 2023 Gamer review personal Archives. All Rights Reserved.
 </small></footer>
-
+<script>
+ window.onload = function() {
+  // Show the website content after 2 seconds
+  setTimeout(function() {
+    document.getElementById("content").style.display = "block";
+    document.getElementById("loader-container").style.display = "none";
+  }, 2000);
+};
+</script>
   </body>
-
 </html>

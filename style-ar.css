@@ -1,0 +1,9 @@
+body {
+    font-family: 'Your Chosen Font', sans-serif;
+    font-weight: normal;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Your Chosen Font', sans-serif;
+    font-weight: bold;
+  }
