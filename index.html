@@ -10,7 +10,9 @@
   keywords="overwatch, games, valorant, gaming"
   content="this web will talk about games and review them in my opinin, main page" />
     <title>Gamer review</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 769px)">
+    <link rel="stylesheet" href="style.css" media="screen and (max-width: 768px)">
+    
   </head>
   <body>
     <header>
@@ -21,6 +23,7 @@
           <li class="navbar-item"><a href="reviews.html">About</a></li>
           <li class="navbar-item"><a href="form.html">Services</a></li>
           <li class="navbar-item"><a href="details.html">Contact</a></li>
+          <li class="navbar-item"><a href="ttt.html">mini-game</a></li>
         </ul>
       </nav>
       <div id="loader-container">
@@ -42,21 +45,22 @@
       <section>
     <h2>What the web page is about?</h2>
     <p>This web page is about my experience in games and 
-      the games i love the most and always play in daily bases,</p>
+      the games i love the most and always play in daily bases,
       
-      <aside>It will be all based on my <em>opinin.</em></aside>
+      It will be all based on my <em>opinin.</em></p>
     <h2>Why are games improtant to me?</h2>
-    <p>Because games are like movies, but you are in control.</p>
-    <p>The story tells a lot and the game play makes your experience better.</p>
+    <p>Because games are like movies, but you are in control.
+    <The story tells a lot and the game play makes your experience better.
+    </p>
   </section>
-  <figure>
+  
     <img
     width="500"
     class="fit-picture"
     src="100-best-games-hp-b.webp"
     />
-  </figure>
-  <figure>
+  
+  
      
     <table class="top" border="1">
       <figcaption>
@@ -88,8 +92,8 @@
     </tbody>
     </table>
     <button class="button">Click for luck!</button>
-  </figure>
-  </main>
+  
+  
     <details>
       <footer>
     <ul>
@@ -109,7 +113,9 @@
 <footer> <small>
   Copyright © 2023 Gamer review personal Archives. All Rights Reserved.
 </small></footer>
+</main>
 <script>
+  
  window.onload = function() {
   // Show the website content after 2 seconds
   setTimeout(function() {
@@ -117,6 +123,7 @@
     document.getElementById("loader-container").style.display = "none";
   }, 2000);
 };
+
 </script>
   </body>
 </html>

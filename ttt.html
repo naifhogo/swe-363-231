@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XO Game</title>
+    <p>Click on a cell to place your letter. X goes first.</p>
+    <p id="turn">Now it's X's turn (<span>X</span>)</p>
+    <p>X Score: <span id="xScore">0</span></p>
+    <p>O Score: <span id="oScore">0</span></p>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 0px;
+        }
+
+        .cell {
+            font-family: sans-serif;
+            font-size: larger;
+            font-weight: bolder;
+            background-color: beige;
+            width: 100px;
+            height: 100px;
+            border: 4px solid white;
+            border-radius: 12px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cell:hover,
+        .selected {
+            background-color: blanchedalmond;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+
+        .winner {
+            background-color: lightgreen;
+        }
+
+        .draw {
+            background-color: lightblue;
+        }
+
+        code {
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="turn">
+        Now it's <span>X</span>'s turn
+    </h1>
+    <p>Use <code>Space</code> to select & <code>Arrows</code> to move</p>
+    <div class="board">
+        <div class="grid">
+            <div class="cell" onclick="cellClicked(0)"></div>
+            <div class="cell" onclick="cellClicked(1)"></div>
+            <div class="cell" onclick="cellClicked(2)"></div>
+            <div class="cell" onclick="cellClicked(3)"></div>
+            <div class="cell" onclick="cellClicked(4)"></div>
+            <div class="cell" onclick="cellClicked(5)"></div>
+            <div class="cell" onclick="cellClicked(6)"></div>
+            <div class="cell" onclick="cellClicked(7)"></div>
+            <div class="cell" onclick="cellClicked(8)"></div>
+        </div>
+    </div>
+    <button onclick="resetGame()">Reset</button>
+
+    <script>
+        
+        let cells = Array.from(document.getElementsByClassName("cell"));
+        let board = ["", "", "", "", "", "", "", "", ""];
+        let turn = "X";
+        let gameEnded = false;
+
+        const winningCombos = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+
+        function cellClicked(index) {
+            if (gameEnded || board[index] !== "") return;
+            addLetter(index);
+            checkGameResult();
+            if (!gameEnded) {
+                changeTurn();
+            }
+        }
+
+        function addLetter(index) {
+            const cell = cells[index];
+            cell.innerText = turn;
+            cell.classList.add("selected");
+            board[index] = turn;
+        }
+
+        
+        function changeTurn() {
+            turn = turn === "X" ? "O" : "X";
+            const turnLetter = document.querySelector("#turn span");
+            turnLetter.innerText = turn;
+        }
+
+     
+function checkGameResult() {
+    let winnerCells = [];
+    let draw = true;
+
+    for (let i = 0; i < winningCombos.length; i++) {
+        const [a, b, c] = winningCombos[i];
+
+        if (
+            board[a] !== "" &&
+            board[a] === board[b] &&
+            board[a] === board[c]
+        ) {
+            gameEnded = true;
+            winnerCells = [a, b, c];
+            highlightWinnerCells(winnerCells);
+            updateHeader(`${turn} wins!`);
+            incrementScore(turn);
+            return;
+        }
+
+        if (board[a] === "" || board[b] === "" || board[c] === "") {
+            draw = false;
+        }
+    }
+
+    if (draw) {
+        gameEnded = true;
+        updateHeader("Draw!");
+        return;
+    }
+}
+
+        function highlightWinnerCells(cells) {
+            cells.forEach(cellIndex => {
+                cells[cellIndex].classList.add("winner");
+            });
+        }
+
+        function updateHeader(text) {
+        const header = document.querySelector("#turn");
+        header.innerHTML = text;
+        }
+        function resetGame() {
+            gameEnded = false;
+            turn = "X";
+            board = ["", "", "", "", "", "", "", "", ""];
+            cells.forEach(cell => {
+                cell.innerText = "";
+                cell.classList.remove("selected", "winner");
+            });
+            updateHeader("Now it's X's turn");
+        }
+        
+    </script>
+</body>
+
+</html>

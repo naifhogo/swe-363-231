@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="game review" keywords="overwatch, games, valorant, gaming" content="this web will talk about games and review them in my opinion, main page" />
+    <title>Gamer Review</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="reviews.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="form.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="details.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div id="loader-container">
+        <div class="loader">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <!-- Your website content -->
+      <div id="content" style="display: none;">
+        <!-- Your website content goes here -->
+      </div>
+      <h1 class="text-center">Gamer Review Blog</h1>
+      <time class="d-block text-center">09.04.2023</time>
+    </header>
+    <main class="container py-5">
+      <section>
+        <h2>What the web page is about?</h2>
+        <p>This web page is about my experience in games and the games I love the most and play on a daily basis. It will be based on my <em>opinion</em>.</p>
+        <h2>Why are games important to me?</h2>
+        <p>Because games are like movies, but you are in control. The story tells a lot, and the gameplay makes your experience better.</p>
+      </section>
+
+      <img class="img-fluid" src="100-best-games-hp-b.webp" alt="Game Image">
+
+      <table class="table mt-5">
+        <caption><em id="the_most_important">Game Ratings</em></caption>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Games</th>
+            <th scope="col">Type</th>
+            <th scope="col">Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Overwatch</th>
+            <td>PVP</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <th scope="row">Valorant</th>
+            <td>FPS</td>
+            <td>7.5</td>
+          </tr>
+          <tr>
+            <th scope="row">Red Dead Redemption</th>
+            <td>Campaign</td>
+            <td>10</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary">Click for luck!</button>
+
+      <details>
+        <summary>Navigation</summary>
+        <ul>
+          <li><a href="reviews.html">Review</a></li>
+          <li><a href="details.html">Details</a></li>
+          <li><a href="form.html">Proposal</a></li>
+          <li><a href="index-ar.html">Switch to Arabic</a></li>
+        </ul>
+      </details>
+
+      <footer class="mt-5 text-center">
+       <ul>
+          <li>You can see some games I play in here</li>
+          <li><a href="reviews.html">Review</a></li>
+          <li>You can see all contact details in here</li>
+          <li><a href="details.html">Details</a></li>
+          <li>You can submit your proposal in here</li>
+          <li><a href="form.html">Proposal</a></li>
+          <li><a href="index-ar.html">Switch to Arabic</a></li>
+        </ul>
+        <small>&copy; 2023 Gamer Review Personal Archives. All Rights Reserved.</small>
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      window.onload = function() {
+        // Show the website content after 2 seconds
+        setTimeout(function() {
+          document.getElementById("content").style.display = "block";
+          document.getElementById("loader-container").style.display = "none";
+        }, 2000);
+      };
+    </script>
+  </body>
+</html>

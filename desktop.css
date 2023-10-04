@@ -1,22 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lora:ital,wght@0,400;0,500;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lexend+Deca:wght@100&family=Lora:ital,wght@0,400;0,500;1,500;1,700&display=swap');
+.navbar-menu {
+list-style: none;
+padding: 0.5;
+margin: 2;
+}
+
+.navbar-item {
+display: none;
+}
+
+.navbar-icon {
+display: inline-block;
+cursor: pointer;
+margin-right: 10px;
+width: 25px;
+height: 3px;
+background-color: #000; /* Replace with desired color */
+position: relative;
+transition: transform 0.3s ease;
+}
+
+.navbar-icon:before,
+.navbar-icon:after {
+content: "";
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: inherit;
+transition: transform 0.3s ease;
+}
+
+.navbar-icon:before {
+top: -8px;
+}
+
+.navbar-icon:after {
+top: 8px;
+}
+
+.navbar-menu:hover .navbar-item {
+display: inline-block;
+}
+
+.navbar-menu:hover .navbar-icon {
+transform: rotate(45deg);
+}
+
+.navbar-menu:hover .navbar-icon:before {
+transform: rotate(-45deg) translate(-4px, -4px);
+}
+
+.navbar-menu:hover .navbar-icon:after {
+transform: rotate(-45deg) translate(-4px, 4px);
+}
+
 time{
-    color: #FFF;
+    color: #A5A5A5;
     font-family: Lexend Deca;
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 200;
     line-height: normal;
 }
 h1{
     color: #FFF;
-    text-align: center;
-    font-family: DM Serif Display ;
-    font-size: 48px;
+    font-family: Lexend Deca;
+    font-size: 40px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-}
+ }
 h2 {
     color: #6EEB83;
     font-family: DM Serif Display;
@@ -26,11 +80,10 @@ h2 {
     line-height: normal;
 }
 body{
-    width: 1024px;
-    height: 1366px;
+    padding-right: 0px;
     background: #272727;
 }
-nav ,a {
+nav  ,a {
     color: rgb(255, 255, 255);
     flex-shrink: 0;
     border: 1px solid #6EEB83;
@@ -48,6 +101,7 @@ nav ul li{
 }
 p , main , aside{
     width: 876px;
+    height: 154px;
     flex-shrink: 0;
     color: #FFF;
     font-family: Lexend Deca;
@@ -55,14 +109,15 @@ p , main , aside{
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-}
+    }
 figure{
     width: 413px;
     height: 300px;
     flex-shrink: 0;
 }
 details{
-    top: 4px;
+    float: right;
+    top: 30px;
     color: greenyellow;
     background-color: #333;
     
@@ -92,8 +147,8 @@ input[type="submit"]{
     line-height: normal; 
 }
 input {
-    width: 600px;
-    height: 60px;
+    width: 572px;
+    height: 67px;
     flex-shrink: 0;
     border: 1px solid #6EEB83;
     background: #272727;
@@ -101,8 +156,8 @@ input {
     font-size: 18px;
 }
 textarea{
-    width: 600px;
-    height: 60px;
+    width: 572px;
+    height: 67px;
     flex-shrink: 0;
     border: 1px solid #6EEB83;
     background: #272727;
@@ -126,9 +181,25 @@ input[type="checkbox"]{
   }
   
   .button:hover {
-    background-color: #ff0000;
+    background-color: #6EEB83;
   }
   .submit:hover {
-    background-color: #ff0000;
+    background-color: #6EEB83;
   }
-  
+  table tbody tr:nth-child(odd) {
+    background-color: #6EEB83;
+}
+tr:hover {
+    background-color: lightblue;
+  }
+  tr:hover td {
+    background-color: lightblue;
+  }
+  figure  {
+    
+    top: 40px;
+  }
+  footer{
+    
+    float: left;
+  }
