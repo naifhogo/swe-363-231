@@ -1,57 +1,67 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
     text-align: center; 
+    background-color: #1C1C1C;
+    color: #FFFFFF;
 }
 
 hr {
-     width:500px ;
+    width: 500px;
+    border-color: #FFFFFF;
 }
 
 #title {
-    font-size:36px ;
+    font-size: 36px;
     font-weight: bold;
     letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-#board {width:350px ;
-height: 420px;
-margin: 0 auto;
-margin-top: 3px;
-display: flex;
-flex-wrap: wrap;
+#board {
+    width: 350px;
+    height: 420px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1F1F1F;
+    border: 5px solid #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
-.tile{
+
+.tile {
     /* Box */
-    border:2px solid lightgray ;
+    border: 2px solid #787C7E;
     width: 60px;
     height: 60px;
     margin: 2.5px;
 
-    /* text */
-    color: black;
-    font-size:36px ;
+    /* Text */
+    color: #FFFFFF;
+    font-size: 24px;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #1F1F1F;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .correct {
- background-color: #6AAA64;
- color: white;
- border-color: white;
-
+    background-color: #6AAA64;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
 }
 
 .present {
-background-color: #C9B458;
-color: white;
-border-color: white;
+    background-color: #C9B458;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
 }
 
 .absent {
- background-color: #787C7E;
- color: white;
- border-color: white;
+    background-color: #787C7E;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
 }
-
