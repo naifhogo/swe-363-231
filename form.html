@@ -8,6 +8,20 @@
     <title>Form Subpage</title>
     <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 769px)">
     <link rel="stylesheet" href="style.css" media="screen and (max-width: 768px)">
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      canvas {
+        border: 1px solid rgb(204, 204, 204);
+        cursor: crosshair;
+        background-color: rgb(148, 212, 119);
+      }
+      #submitButton {
+        margin-top: 10px;
+      }
+    </style>
 </head>
 <body>
   <header>
@@ -60,11 +74,49 @@
         </select><br><br>
         <label for="checkbox">Satisfied?:</label>
         <input type="checkbox" id="satisfied" name="satisfied"><br><br>
-
         <input type="submit" value="Submit">
+        <canvas id="signatureCanvas" width="400" height="200"></canvas>
+        <br />
+        <button id="submitButton">Submit Signature</button>
+        <br/><br/>
+        <script>
+          const canvas = document.getElementById('signatureCanvas');
+          const context = canvas.getContext('2d');
+          let isDrawing = false;
+          
+          canvas.addEventListener('mousedown', startDrawing);
+          canvas.addEventListener('mousemove', draw);
+          canvas.addEventListener('mouseup', stopDrawing);
+          canvas.addEventListener('mouseout', stopDrawing);
+    
+          function startDrawing(event) {
+            isDrawing = true;
+            const { offsetX, offsetY } = event;
+            context.beginPath();
+            context.moveTo(offsetX, offsetY);
+          }
+    
+          function draw(event) {
+            if (!isDrawing) return;
+            const { offsetX, offsetY } = event;
+            context.lineTo(offsetX, offsetY);
+            context.stroke();
+          }
+    
+          function stopDrawing() {
+            isDrawing = false;
+          }
+    
+          document.getElementById('submitButton').addEventListener('click', function() {
+            const image = canvas.toDataURL('image/png');
+            console.log(image);
+          });
+        </script>
       </form>
       <footer> <small>
         Copyright © 2023 Gamer review personal Archives. All Rights Reserved.
       </small></footer>
+
 </body>
+
 </html>

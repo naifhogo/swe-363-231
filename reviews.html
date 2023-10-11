@@ -41,6 +41,10 @@
         borrowing several mechanics such as the buy menu, spray patterns, 
         and inaccuracy while moving.</article>
         <aside> the game is very entertaning and compatitve and fun to play with your friends here are some picture</aside>
+        <div id="comp"></div>
+        <section id="agent-section">
+          <h3>Agent Information:</h3>
+      </section>
         <div id="posts">
       <!--  <img
      width="500"
@@ -48,6 +52,7 @@
     src="Screenshot-2020-06-19-at-15.50.13.webp"
     />-->
   </div>
+  
   </section>
   <section>
     <h3> Red Dead Redemotion:</h3>
@@ -67,8 +72,56 @@
     src="e00ebe0f-2a60-4fe4-b5a4-5f34c2dbeab0.jpg"
     />-->
   </div>
-  
   </section>
+  <script>
+    async function valoCompData() {
+        try {
+            const res = await fetch("https://valorant-api.com/v1/seasons/competitive");
+            const json = await res.json();
+            const compData = document.getElementById("comp");
+            compData.textContent = json.status;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    valoCompData();
+</script>
+  <script>
+      async function valoCompData() {
+  try {
+    const res = await fetch("https://valorant-api.com/v1/agents");
+    
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
+    }
+    
+    const json = await res.json();
+    const agentsData = json.data;
+
+    const agentSection = document.getElementById("agent-section");
+
+    agentsData.forEach(agent => {
+      const agentContainer = document.createElement("div");
+      agentContainer.classList.add("agent-container");
+
+      const agentName = document.createElement("h4");
+      agentName.textContent = agent.displayName;
+
+      const agentDescription = document.createElement("p");
+      agentDescription.textContent = agent.description;
+
+      agentContainer.appendChild(agentName);
+      agentContainer.appendChild(agentDescription);
+      agentSection.appendChild(agentContainer);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+valoCompData();
+  </script>
   
   <details>
     <p>You can go back the original web here.</p>
