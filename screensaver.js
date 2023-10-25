@@ -44,4 +44,4 @@ function resetScreensaver() {
 }
 
 
-screensaverTimeout = setTimeout(startScreensaver, 9999);
+screensaverTimeout = setTimeout(startScreensaver, 99);

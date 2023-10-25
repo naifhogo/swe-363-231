@@ -12,6 +12,7 @@
     <title>Gamer review</title>
     <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 769px)">
     <link rel="stylesheet" href="style.css" media="screen and (max-width: 768px)">
+    <script src="classes.js"></script>
     <style>
       #screensaver {
       position: fixed;
@@ -90,29 +91,29 @@
         <em id="the_most_important">Game Ratings</em>
       </figcaption>
       <thead>
-      <tr>
-        <th scope="col">Games</th>
-        <th scope="col">Type</th>
-        <th scope="col">Rating</th>
+        <tr>
+          <th>Name</th>
+          <th>Genre</th>
+          <th>Rating</th>
+        </tr>
       </thead>
       <tbody>
-      </tr>
-      <tr>
-        <th scope="row">Overwatch</th>
-        <td>PVP</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <th scope="row">Valorant</th>
-        <td>FPS</td>
-        <td>7.5</td>
-      </tr>
-      <tr>
-        <th scope="row">Red Dead Redemotion</th>
-        <td>Campain</td>
-        <td>10</td>
-      </tr>
-    </tbody>
+        <tr>
+          <td id="game1-name"></td>
+          <td id="game1-genre"></td>
+          <td id="game1-rating"></td>
+        </tr>
+        <tr>
+          <td id="game2-name"></td>
+          <td id="game2-genre"></td>
+          <td id="game2-rating"></td>
+        </tr>
+        <tr>
+          <td id="game3-name"></td>
+          <td id="game3-genre"></td>
+          <td id="game3-rating"></td>
+        </tr>
+      </tbody>
     </table>
     <button class="button">Click for luck!</button>
   
@@ -138,7 +139,17 @@
 </small></footer>
 </main>
 <script>
-  
+  document.getElementById("game1-name").textContent = game1.name;
+  document.getElementById("game1-genre").textContent = game1.genre;
+  document.getElementById("game1-rating").textContent = game1.rating;
+
+  document.getElementById("game2-name").textContent = game2.name;
+  document.getElementById("game2-genre").textContent = game2.genre;
+  document.getElementById("game2-rating").textContent = game2.rating;
+
+  document.getElementById("game3-name").textContent = game3.name;
+  document.getElementById("game3-genre").textContent = game3.genre;
+  document.getElementById("game3-rating").textContent = game3.rating;
  window.onload = function() {
   // Show the website content after 2 seconds
   setTimeout(function() {

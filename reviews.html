@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 769px)">
     <link rel="stylesheet" href="style.css" media="screen and (max-width: 768px)">
     <script src="script.js" defer></script>
+    <script src="classes.js"></script>
   </head>
   <body>
     <header>
@@ -30,16 +31,8 @@
     <main>
       <section>
     <h2>Gamer reviews:</h2>
-    <h3> valorant:</h3>
-    <article>Valorant is a free-to-play first-person tactical hero 
-        shooter developed and published by Riot Games, 
-        for Windows. Teased under the codename Project A in 
-        October 2019, the game began a closed beta period with limited 
-        access on April 7, 2020, followed by a release on June 2, 2020. 
-        The development of the game started in 2014. 
-        Valorant takes inspiration from the Counter-Strike series, 
-        borrowing several mechanics such as the buy menu, spray patterns, 
-        and inaccuracy while moving.</article>
+    <h3 id="game1"> :</h3>
+    <article id="article1">.</article>
         <aside> the game is very entertaning and compatitve and fun to play with your friends here are some picture</aside>
         <div id="comp"></div>
         <section id="agent-section">
@@ -55,15 +48,8 @@
   
   </section>
   <section>
-    <h3> Red Dead Redemotion:</h3>
-    <article> Red Dead Redemption 2 is a 2018 action-adventure game developed and published by Rockstar Games. 
-        The game is the third entry in the Red Dead series and a prequel to the 2010 game Red Dead Redemption. 
-        The story is set in a fictionalized representation of the United States in 1899 and follows the exploits of Arthur Morgan, 
-        an outlaw and member of the Van der Linde gang, who must deal with the decline of the Wild West whilst attempting to survive 
-        against government forces, rival gangs, and other adversaries. The game is presented through first- and third-person perspectives, 
-        and the player may freely roam in its interactive open world. Gameplay elements include shootouts, robberies, hunting, horseback riding, 
-        interacting with non-player characters, and maintaining the character's honor rating through moral choices and deeds. A bounty system 
-        governs the response of law enforcement and bounty hunters to crimes committed by the player.</article>
+    <h3 id="game2"> </h3>
+    <article id="article2"> </article>
         
         <!-- <div id="posts">
         <img
@@ -74,6 +60,10 @@
   </div>
   </section>
   <script>
+    document.getElementById("game1").textContent = valorantArticle.title;
+    document.getElementById("article1").textContent = valorantArticle.content;
+    document.getElementById("game2").textContent = redDeadRedemptionArticle.title;
+    document.getElementById("article2").textContent = redDeadRedemptionArticle.content;
     async function valoCompData() {
         try {
             const res = await fetch("https://valorant-api.com/v1/seasons/competitive");
