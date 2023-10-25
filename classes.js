@@ -22,4 +22,11 @@ const articles = [
   const game1 = new Game("Overwatch", "PVP", 8);
   const game2 = new Game("Valorant", "FPS", 7.5);
   const game3 = new Game("Red Dead Redemption", "Campaign", 10);
- 
+  
+  const gameNames = games.map((game) => game.name);
+  const highRatedGames = games.filter((game) => game.rating >= 8);
+  const totalRating = games.reduce((total, game) => total + game.rating, 0);
+  
+  console.log(gameNames);
+  console.log(highRatedGames);
+  console.log(totalRating);

@@ -29,17 +29,22 @@
 
     drawFrame();
 
-    document.addEventListener('mousemove', resetScreensaver);
-    document.addEventListener('keydown', resetScreensaver);
-    document.addEventListener('click', resetScreensaver);
+    const resetScreensaver = () => {
+      clearTimeout(screensaverTimeout);
+      screensaver.style.display = 'none';
+      screensaverTimeout = setTimeout(startScreensaver, 9999);
+    };
+
+    const eventListeners = ['mousemove', 'keydown', 'click'];
+    eventListeners.forEach((event) => {
+      document.addEventListener(event, resetScreensaver);
+    });
   };
 
-  const resetScreensaver = () => {
+  const resetScreensaverTimeout = () => {
     clearTimeout(screensaverTimeout);
-    const screensaver = document.getElementById('screensaver');
-    screensaver.style.display = 'none';
-    screensaverTimeout = setTimeout(startScreensaver, 9999);
+    screensaverTimeout = setTimeout(startScreensaver, 99);
   };
 
-  screensaverTimeout = setTimeout(startScreensaver, 99);
-})();
+  resetScreensaverTimeout();
+})()

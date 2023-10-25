@@ -19,31 +19,50 @@ const posts = [
 
 const parentContainer = document.querySelector("#posts");
 
-posts.forEach((post) => {
+const createDiv = () => {
   const div = document.createElement("div");
-  div.classList.add("index");
-  div.classList.add("reviews");
+  div.classList.add("index", "reviews");
+  return div;
+};
 
+const createImg = (post) => {
   const img = document.createElement("img");
   img.src = post.src;
   img.alt = "Sample Image";
-  div.appendChild(img);
+  return img;
+};
 
+const createTitle = (post) => {
   const title = document.createElement("h2");
   title.textContent = post.title;
-  div.appendChild(title);
+  return title;
+};
 
+const createBrief = (post) => {
   const brief = document.createElement("p");
   brief.textContent = post.brief;
-  div.appendChild(brief);
+  return brief;
+};
 
+const createTags = (post) => {
   const tags = document.createElement("ul");
-  post.tags.forEach((tag) => {
+  const tagItems = post.tags.map((tag) => {
     const li = document.createElement("li");
     li.textContent = tag;
-    tags.appendChild(li);
+    return li;
   });
-  div.appendChild(tags);
+  tags.append(...tagItems);
+  return tags;
+};
 
-  parentContainer.appendChild(div);
-});
+const createPost = (post) => {
+  const div = createDiv();
+  div.append(createImg(post), createTitle(post), createBrief(post), createTags(post));
+  return div;
+};
+
+const appendChild = (parent, child) => {
+  parent.appendChild(child);
+};
+
+posts.map(createPost).forEach((post) => appendChild(parentContainer, post));
