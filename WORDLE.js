@@ -76,7 +76,7 @@ function update() {
     } else if (word.includes(letter)) {
       currTile.classList.add("present");
     } else {
-      currTile.classList.add("absent");
+      currTile.classList.add("absent");2
     }
 
     if (correct === width) {
