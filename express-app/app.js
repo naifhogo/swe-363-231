@@ -1,11 +1,16 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send(`Welcome to the homepage!, this page is running on ${port} `);
-  });
+//route files:
+const homeRouter = require('./routes/homeRouter');
+const userRouter = require('./routes/userRouter');
 
-  const port = 3000; 
+//routers:
+app.use('/', homeRouter);
+app.use('/users', userRouter);
+
+
+const port = 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
