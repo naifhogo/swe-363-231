@@ -39,7 +39,7 @@
     <time>09.04.2023</time>
     
   </header>
-    <form action="thankyou.html">
+  <form action="/submit" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" autocomplete="given-name" required><br><br>
     
@@ -74,12 +74,14 @@
         </select><br><br>
         <label for="checkbox">Satisfied?:</label>
         <input type="checkbox" id="satisfied" name="satisfied"><br><br>
-        <input type="submit" value="Submit">
+        <button type="submit">Submit</button>
         <canvas id="signatureCanvas" width="400" height="200"></canvas>
         <br />
         <button id="submitButton">Submit Signature</button>
         <br/><br/>
+   
         <script>
+          app.use(express.static('public'));
           const canvas = document.getElementById('signatureCanvas');
           const context = canvas.getContext('2d');
           let isDrawing = false;
@@ -112,11 +114,11 @@
             console.log(image);
           });
         </script>
-      </form>
+    
       <footer> <small>
         Copyright © 2023 Gamer review personal Archives. All Rights Reserved.
       </small></footer>
-
+   </form>
 </body>
 
 </html>
